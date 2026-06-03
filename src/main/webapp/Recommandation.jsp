@@ -298,7 +298,7 @@
 
             <div class="text-center pt-3 border-top mt-3">
                 <span class="fw-bold text-dark">Total d'activités : <%= totalActivites %></span>
-            </div>
+            </div>l
 
         </div>
     </div>
