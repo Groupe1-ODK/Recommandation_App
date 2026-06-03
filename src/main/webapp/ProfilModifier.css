@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@charset "UTF-8";
+body{
+    background:#d9d9d9;
+    font-family:'Poppins', sans-serif;
+}
+
+
+.page-wrapper{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 0;
+}
+/* Carte principale */
+.success-card{
+    width:600px;
+    height:760px;
+
+    background:#151d4a;
+
+    border-radius:50px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    position:relative;
+    padding-top: 50px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+/* Icône utilisateur */
+.user-icon{
+    margin-top:-20px;
+}
+
+.user-icon i{
+    font-size:160px;
+    color:white;
+}
+
+/* Icône validation */
+.check-icon{
+    margin-top:-50px;
+}
+
+.check-icon i{
+    font-size:180px;
+    color:white;
+}
+
+/* Texte */
+.success-text{
+    
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:400;
+
+    text-align:center;
+}
+
+/* Bouton */
+.retour-btn{
+
+    position:absolute;
+    bottom: 90px;
+
+    width:220px;
+    height:48px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#a2a5b8;
+
+    color:white;
+
+    font-size:25px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.retour-btn:hover{
+    background:#b5b8c9;
+    color:white;
+}
