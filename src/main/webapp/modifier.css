@@ -1,0 +1,117 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background:#e9ecef;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.back{
+    position:absolute;
+    left:0;
+
+    color:black;
+
+    font-size:28px;
+
+    text-decoration:none;
+}
+
+.card{
+	
+	background-color: white;
+	
+    width:1000px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+
+    margin-bottom:50px;
+}
+
+
+.header h1{
+    font-size:35px;
+}
+
+.form-grid{
+    display:flex;
+	gap:60px;
+}
+
+.column{
+    flex:2;
+}
+
+.form-group{
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.form-group label{
+    width:140px;
+font-family: 'Poppins', sans-serif;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select{
+
+    flex:1;
+
+    padding:10px;
+
+    border:1px solid #999;
+
+    border-radius:8px;
+}
+
+.btn-container{
+    text-align:center;
+
+    margin-top:30px;
+}
+
+button{
+    background:#2EA883;
+
+    border:none;
+
+    padding:12px 40px;
+
+    border-radius:20px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+button i{
+   margin-left: 8px;
+   } 
+button:hover{
+    background:#28b463;
+}

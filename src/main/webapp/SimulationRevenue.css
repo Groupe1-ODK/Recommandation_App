@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+   
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#d9d9d9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+        /* Conteneur Principal */
+        .app-container {
+           display: flex;
+            width: 100%;
+            background-color: #1a233a; 
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            width:95%;
+        }
+
+        /* Barre latérale (Menu Gauche) */
+        .sidebar {
+            width: 260px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+        }
+
+     .logo-container {
+    margin-bottom: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* C'est ce bloc qui crée le cercle blanc identique à l'image */
+.logo-circle-bg {
+    background-color: #ffffff;  /* Fond blanc pur */
+    width: 50px;                /* Largeur du cercle */
+    height: 50px;               /* Hauteur identique pour faire un carré parfait */
+    border-radius: 50%;         /* 50% transforme un carré parfait en cercle parfait */
+    
+    /* Ces trois lignes permettent de centrer l'image horizontalement et verticalement dans le cercle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+/* Style appliqué à l'image à l'intérieur du cercle */
+.logo-circle-bg img {
+    max-width: 50%;            /* Ajuste la taille de ton logo dans le cercle (ex: 60% ou 70%) */
+    max-height: 50%;
+    object-fit: contain;       /* Empêche le logo de se déformer */
+}
+        /* Liens du menu */
+        .menu-item {
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Espace entre l'icône et le texte */
+            color: #a0aec0;
+        }
+
+        .menu-item i {
+            width: 20px; /* Aligne verticalement toutes les icônes */
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* Élément sélectionné (Simuler Revenus) */
+        .menu-item.active {
+            background-color: #7a8296; 
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Bouton Déconnexion */
+        .logout-btn {
+            margin-top: auto;
+            background-color: #7a8296;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+        }
+
+        /* Zone de contenu blanche à droite */
+        .main-content {
+            flex: 1;
+            background-color: #f8fafc;
+            margin: 15px;
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* En-tête avec profil */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #000000;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Avatar arrondi de l'image */
+        .avatar {
+            width: 45px;
+            height: 45px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #1a233a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Boîtier blanc du Formulaire central */
+        .form-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            width: 160px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .form-group input, .form-group select {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #a0aec0;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            background-color: #fff;
+            appearance: none; /* Enlève la flèche par défaut des select pour le style */
+            -webkit-appearance: none;
+        }
+
+        /* Ajout d'une petite flèche personnalisée pour les listes déroulantes comme sur l'image */
+        .form-group.select-wrapper::after {
+            content: "\f078"; /* Code Font Awesome pour la flèche vers le bas */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 12px;
+            position: absolute;
+            right: 15px;
+            color: #1a233a;
+            pointer-events: none;
+        }
+
+        /* Bouton Simuler en bas à droite */
+        .actions-container {
+            margin-top: auto;
+            text-align: right;
+        }
+
+        .btn-simuler {
+            background-color: #22a685; 
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-simuler:hover {
+            background-color: #1b856a;
+        }
