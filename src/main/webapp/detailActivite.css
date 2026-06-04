@@ -1,0 +1,51 @@
+@charset "UTF-8";
+        body {
+            background-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        .container-detail {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Style du bouton retour de ta maquette */
+        .btn-back {
+            color: #000;
+            font-size: 32px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-back:hover {
+            color: #333;
+            transform: translateX(-5px);
+        }
+
+        .page-title {
+            font-size: 36px;
+            fw-bold: true;
+            font-weight: 700;
+        }
+
+        /* Alignement et espacement des blocs d'information */
+        .info-label {
+            font-weight: 700;
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: #333;
+            white-space: pre-line; /* Permet de respecter les retours à la ligne des étapes ou matériels */
+        }
+
+        /* Espacement vertical entre les lignes d'information */
+        .info-row {
+            margin-bottom: 45px;
+        }
