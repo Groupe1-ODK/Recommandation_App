@@ -210,20 +210,14 @@ select.form-control {
 <body>
 
 	<div class="form-container">
-		<a href="VoirProfilServlet" class="back-arrow"><i
+		<a href="client" class="back-arrow"><i
 			class="bi bi-arrow-left"></i></a>
 
 		<div class="form-title">Complétez Votre Profil</div>
 
 		<form action="profil" method="POST">
 
-			<div class="form-group">
-				<label class="form-label">Identifiant</label>
-				<div class="form-input-wrapper">
-					<input type="text" name="identifiant" class="form-control"
-						placeholder="Entrez votre identifiant">
-				</div>
-			</div>
+			
 
 			<div class="form-group">
 				<label class="form-label">Disponibilité</label>
@@ -273,13 +267,7 @@ select.form-control {
 				</div>
 			</div>
 
-			<div class="form-group">
-				<label class="form-label">Capital</label>
-				<div class="form-input-wrapper">
-					<input type="number" name="capital" class="form-control"
-						placeholder="Entrez le capital disponible (FCFA)" required>
-				</div>
-			</div>
+			
 
 			<div class="form-group">
 				<label class="form-label">Zone</label>

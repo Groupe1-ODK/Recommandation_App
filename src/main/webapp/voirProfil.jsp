@@ -22,6 +22,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Mon Profil Entrepreneur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
     <style>
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
         body { background-color: #F4F6F9; color: #333; padding: 40px 20px; }
@@ -50,10 +52,17 @@
         /* Boutons d'action */
         .actions-box { display: flex; gap: 15px; justify-content: flex-end; border-top: 1px solid #EAECEF; padding-top: 25px; }
         .btn { padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.2s; text-align: center; }
+        
         .btn-primary { background-color: #1a233d; color: white; border: none; }
         .btn-primary:hover { background-color: #111729; }
+        
         .btn-secondary { background-color: #FFF; color: #555; border: 1px solid #CCD1D9; }
         .btn-secondary:hover { background-color: #F5F7FA; }
+
+        /* 🛠️ STYLE DU BOUTON RETOUR SÉPARÉ AVEC REPOUSSEMENT AUTOMATIQUE */
+        .btn-isolated-back {
+            margin-right: auto; /* 👈 C'est ce qui pousse le bouton tout au début (à gauche) */
+        }
     </style>
 </head>
 <body>
@@ -114,6 +123,8 @@
         </div>
 
         <div class="actions-box">
+            <a href="client" class="btn btn-secondary btn-isolated-back">Retour</a>
+            
             <a href="renseignerProfil.jsp" class="btn btn-secondary">Modifier mon profil</a>
             <a href="<%=request.getContextPath()%>/RecommandationServelet" class="btn btn-primary">Voir les Activités Recommandées</a>
         </div>
