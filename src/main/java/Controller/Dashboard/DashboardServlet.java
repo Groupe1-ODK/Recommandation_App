@@ -6,6 +6,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
+
+import Model.DAO.DAOImpl.CompetenceDAOImpl;
+import Model.Entites.Competence;
+import Model.InterfaceDB.Database;
+import Model.Utils.ConnexionDB.MySQL;
 
 /**
  * Servlet implementation class DashboardServlet
@@ -21,20 +27,14 @@ public class DashboardServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Database db  = new MySQL();
+CompetenceDAOImpl competenceDAO = new CompetenceDAOImpl(db);
+List<Competence> catalogueCompetences = competenceDAO.trouverTousCompetences();
 
-		String nomUtilisateur = "Kadidiatou";
+request.setAttribute("catalogueCompetences", catalogueCompetences);
 
-		int nbActivites = 50;
-		int nbClients = 100;
-		int nbMissions = 20;
 
-		// ENVOYER AU JSP
-
-		request.setAttribute("nomUtilisateur", nomUtilisateur);
-		request.setAttribute("nbActivites", nbActivites);
-		request.setAttribute("nbClients", nbClients);
-		request.setAttribute("nbMissions", nbMissions);
-
+	
 		// OUVRIR LE JSP
 
 		request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
