@@ -41,7 +41,7 @@ public class ModifierProfilServelet extends HttpServlet {
 			return;
 		}
 
-		// On cherche le profil de l'utilisateur connecté via ton DAO
+		// On cherche le profil de l'utilisateur connecté via DAO
 		Profil profilExistant = profilDAO.trouverParUtilisateur(userConnecte.getId());
 
 		if (profilExistant != null) {

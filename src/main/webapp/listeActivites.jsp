@@ -67,7 +67,7 @@
 
                 <div class="mb-4 dropdown">
                     <button class="btn btn-filter shadow-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        Filtrer : <span id="current-filter" class="fw-bold text-dark"></span> 
+                        Filtrer : <span id="current-filter" class="fw-bold text-dark"></span> <i class="bi bi-sliders ms-2"></i>
                     </button>
                     <ul class="dropdown-menu shadow border-0 mt-2" aria-labelledby="dropdownMenuButton" style="border-radius: 12px;">
                         <li><a class="dropdown-item py-2" href="#" onclick="filtrerParNom('TOUT', 'Tous')"><i class="bi bi-globe me-2"></i> Toutes les activités</a></li>
