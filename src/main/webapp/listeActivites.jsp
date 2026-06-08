@@ -223,10 +223,10 @@
 
                 <ul class="nav-menu">
                     <li><a href="client" class="nav-item-link"><i class="bi bi-house-door"></i> Tableau de bord</a></li>
-                    <li><a href="CreerProfilServelet" class="nav-item-link"><i class="bi bi-people"></i> Renseigner Profil</a></li>
+                    <li><a href="profil" class="nav-item-link"><i class="bi bi-people"></i> Renseigner Profil</a></li>
                     <li><a href="#" class="nav-item-link"><i class="bi bi-cash-coin"></i> Simuler Revenus</a></li>
                     <li><a href="ListeActivitesServelet" class="nav-item-link active"><i class="bi bi-grid-1x2"></i> Liste Activité</a></li>
-                    <li><a href="#" class="nav-item-link"><i class="bi bi-check-square"></i> Recommandation</a></li>
+                    <li><a href="Recommandation" class="nav-item-link"><i class="bi bi-check-square"></i> Recommandation</a></li>
                     <li><a href="#" class="nav-item-link"><i class="bi bi-heart"></i> Favoris</a></li>
                     <li><a href="VoirProfilServlet" class="nav-item-link"><i class="bi bi-person"></i> Voir Profil</a></li>
                 </ul>

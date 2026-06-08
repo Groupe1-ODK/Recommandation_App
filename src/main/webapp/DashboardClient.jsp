@@ -244,6 +244,7 @@ body {
 				<ul class="nav-menu">
 					<li><a href="client" class="nav-item-link active"><i
 							class="bi bi-house-door"></i> Tableau de bord</a></li>
+							
 					<li><a href="profil" class="nav-item-link"><i
 							class="bi bi-people"></i> Renseigner Profil</a></li>
 					<li><a href="SimulationRevenue" class="nav-item-link"><i
