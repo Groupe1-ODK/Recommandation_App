@@ -114,3 +114,123 @@ INSERT INTO competence (id, nom, description) VALUES
 (58, 6, 'Transport marchandises', 'Transport logistique', 'Transport produits', 'Accidents', 1500000, 5000000, 7, 0, 'Camion', 1000000, 'VILLE'),
 (59, 6, 'Salon coiffure', 'Services coiffure', 'Coiffure clients', 'Faible clients', 300000, 700000, 5, 0, 'Matériel coiffure', 150000, 'VILLE'),
 (60, 6, 'Impression numérique', 'Impression documents', 'Impression clients', 'Panne machine', 600000, 1500000, 6, 1, 'Imprimante', 400000, 'VILLE');
+
+
+
+
+
+package Model.Service.ServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Model.DAO.DAOInter.ActiviteInter;
+import Model.DAO.DAOInter.RecommandationDAOInter;
+import Model.Entites.Activite;
+import Model.Entites.Competence;
+import Model.Entites.Profil;
+import Model.Service.ServiceInter.IServiceRecommandation;
+import Model.Service.ServiceInter.ProfilServiceInter;
+
+public class RecommandationService implements IServiceRecommandation{
+
+    private final RecommandationDAOInter recommandationRepository;
+    private final ActiviteInter activiteService;
+    private final ProfilServiceInter profilService;
+
+    public RecommandationService(RecommandationDAOInter recommandationRepository, ActiviteInter activiteRepository,ProfilServiceInter profilService) {
+        this.recommandationRepository = recommandationRepository;
+        this.activiteService = activiteRepository;
+        this.profilService  = profilService;
+    } 
+
+    @Override
+    public void creer(Profil profil) {
+
+        List<Activite> activites = this.activiteService.tousList();
+        List<Activite> recommandation = new ArrayList<>();
+
+        System.out.println("===== DEBUT RECOMMANDATION =====");
+        System.out.println("Profil ID : " + profil.getId());
+
+        for (Activite activite : activites) {
+
+            System.out.println("\n--------------------------------");
+            System.out.println("Activite : " + activite.getNom());
+
+            // Vérification accès internet
+            if (profil.isAccessInternet() == activite.isAccesInternet()) {
+
+                System.out.println("✓ Accès internet compatible");
+
+                // Vérification disponibilité
+                if (profil.getDisponibilite() >= activite.getDisponibilite()) {
+
+                    System.out.println("✓ Disponibilité compatible");
+                    System.out.println("  Profil : " + profil.getDisponibilite());
+                    System.out.println("  Activité : " + activite.getDisponibilite());
+
+                    // Vérification zone
+                    if (profil.getZone() == activite.getZone()) {
+
+                        System.out.println("✓ Zone compatible");
+                        System.out.println("  Profil : " + profil.getZone());
+                        System.out.println("  Activité : " + activite.getZone());
+
+                        // Vérification compétences
+                        if (profil.getCompetences().containsAll(activite.getCompetences())) {
+
+                            System.out.println("✓ Compétences compatibles");
+                            System.out.println(">>> ACTIVITE RECOMMANDEE <<<");
+
+                            recommandation.add(activite);
+
+                        } else {
+
+                            System.out.println("✗ Compétences incompatibles");
+
+                            System.out.println("Compétences du profil :");
+                            for (Competence c : profil.getCompetences()) {
+                                System.out.println(" - " + c.getNom());
+                            }
+
+                            System.out.println("Compétences requises :");
+                            for (Competence c : activite.getCompetences()) {
+                                System.out.println(" - " + c.getNom());
+                            }
+                        }
+
+                    } else {
+
+                        System.out.println("✗ Zone incompatible");
+                        System.out.println("  Profil : " + profil.getZone());
+                        System.out.println("  Activité : " + activite.getZone());
+                    }
+
+                } else {
+
+                    System.out.println("✗ Disponibilité insuffisante");
+                    System.out.println("  Profil : " + profil.getDisponibilite());
+                    System.out.println("  Activité : " + activite.getDisponibilite());
+                }
+
+            } else {
+
+                System.out.println("✗ Accès internet incompatible");
+                System.out.println("  Profil : " + profil.isAccessInternet());
+                System.out.println("  Activité : " + activite.isAccesInternet());
+            }
+        }
+
+        System.out.println("\n===== FIN RECOMMANDATION =====");
+        System.out.println("Nombre d'activités recommandées : " + recommandation.size());
+
+        this.recommandationRepository.creer(profil.getId(), recommandation);
+    }
+
+	@Override
+	public List<Activite> liste(int utilisateurId) {
+		return this.recommandationRepository.liste(this.profilService.obtenirProfilParUtilisateur(utilisateurId).getId());
+	}
+}
+

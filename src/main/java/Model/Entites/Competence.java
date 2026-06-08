@@ -19,17 +19,17 @@ public class Competence {
 	@Override
 	public boolean equals(Object o) {
 
-		if (this == o) { 
-			return true;
-		}
+	    if (this == o) {
+	        return true;
+	    }
 
-		if (!(o instanceof Competence)) {
-			return false;
-		}
+	    if (!(o instanceof Competence)) {
+	        return false;
+	    }
 
-		Competence competence = (Competence) o;
+	    Competence competence = (Competence) o;
 
-		return Objects.equals(id, competence.id);
+	    return Objects.equals(this.nom, competence.nom);
 	}
 
 	@Override

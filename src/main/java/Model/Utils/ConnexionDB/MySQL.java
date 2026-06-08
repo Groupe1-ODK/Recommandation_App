@@ -15,15 +15,13 @@ public class MySQL implements Database {
 		String url = "jdbc:mysql://localhost:3306/application_recommandation";
 
 		String username = "root";
-		String passwd = "12345";
+		String passwd = "root";
 
 		try {
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			conn = DriverManager.getConnection(url, username, passwd);
-
-			System.out.println("Connexion MySQL réussie");
 
 		} catch(ClassNotFoundException e){
 			System.out.println("pilote pheno non chargeeeee");
